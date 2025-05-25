@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "spark-catalyst-udf-comparison"
+version = "0.1.0"
+description = "Benchmark comparison between Catalyst Custom Functions, Python UDFs and Pandas UDFs in PySpark"
+authors = ["RafHellRaiser"]
+license = "MIT"
+readme = "README.md"
+
+packages = [{ include = "spark_catalyst_udf_comparison", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pyspark = "3.5.5"
+cryptography = "^42.0.0"
+pandas = "^2.0.0"
+requests = "^2.31.0"
+sparkmeasure = "0.24.0"
+typer = "^0.9.0"
+click = "^8.1.7"
+rich = "^13.7.0"
+pydantic = "^2.0.0"
+
+[tool.poetry.scripts]
+spark-catalyst = "spark_catalyst_udf_comparison.cli:app"
+encrypt-example = "jobs.encrypt_name_example:main"
+
+[build-system]
+requires = ["poetry-core>=1.0"]
+build-backend = "poetry.core.masonry.api"
