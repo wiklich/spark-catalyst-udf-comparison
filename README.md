@@ -145,6 +145,7 @@ This allows you to submit jobs like this:
 
 ```bash
 spark-submit \
+  --conf spark.sql.extensions=br.com.wiklich.security.crypto.CryptoExtension \
   --py-files dist/crypto_udfs.zip \
   dist/job_spark_catalyst_udf_comparison.py \
   run CATALYST \
